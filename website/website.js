@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const bodyParser = require('body-parser');
 const rateLimit = require("express-rate-limit");
 const MongoClient = require('mongodb').MongoClient;
 const fetch = require('node-fetch');
@@ -14,8 +13,8 @@ const app = express();
 var database = null;
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 client.connect(err => {
     if (err) throw err;

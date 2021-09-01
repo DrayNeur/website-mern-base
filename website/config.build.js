@@ -62,5 +62,7 @@ module.exports = {
     path: path.resolve(__dirname, 'build', 'public', 'js'),
   },
 };
-
-fs.writeFileSync(path.join(__dirname, 'index.html'), fs.readFileSync(path.join(__dirname, 'index.html')).toString().replace('%idanticache%', idanticache));
+fs.copyFile(path.join(__dirname, 'index.html'), path.join(__dirname,'build', 'index.html'), (err) => {
+  if (err) throw err;
+  fs.writeFileSync(path.join(__dirname,'build', 'index.html'), fs.readFileSync(path.join(__dirname,'build', 'index.html')).toString().replace('%idanticache%', idanticache));
+});

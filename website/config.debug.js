@@ -55,7 +55,7 @@ module.exports = {
     extensions: ['.js'],
   },
   output: {
-    filename: 'app.js',
+    filename: 'app.idcache.js',
     path: path.resolve(__dirname ,'public', 'js'),
   },
 };

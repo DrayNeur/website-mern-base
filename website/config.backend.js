@@ -20,7 +20,7 @@ module.exports = {
   },
   externals: nodeModules,
   plugins: [
-    new webpack.IgnorePlugin(/\.(css|less)$/),
+    new webpack.IgnorePlugin({resourceRegExp: /\.(css|less)$/}),
     new webpack.BannerPlugin('require("source-map-support").install();',
                              { raw: true, entryOnly: false })
   ]
